@@ -121,8 +121,8 @@ if (!empty($erros)) {
 }
 
 // ── Persistência em transação ────────────────────────────────────────────────
+$pdo = obterConexao();
 try {
-    $pdo = obterConexao();
     $pdo->beginTransaction();
 
     // PASSO 1: Insere o cliente
@@ -139,14 +139,14 @@ try {
     $clienteId = (int) $pdo->lastInsertId();
 
     // PASSO 2: Gera número único do pedido → TT-AAAAMMDD-NNNN
-    // Conta pedidos do dia para gerar o sufixo sequencial
-    $hoje = date('Y-m-d');
+    // Conta pelo prefixo do número (evita conflito de fuso PHP vs MySQL)
+    $prefixo = 'TT-' . date('Ymd') . '-';
     $stmtContagem = $pdo->prepare(
-        "SELECT COUNT(*) FROM pedidos WHERE DATE(criado_em) = ?"
+        "SELECT COUNT(*) FROM pedidos WHERE numero_pedido LIKE ?"
     );
-    $stmtContagem->execute([$hoje]);
+    $stmtContagem->execute([$prefixo . '%']);
     $contagem     = (int) $stmtContagem->fetchColumn();
-    $numeroPedido = 'TT-' . date('Ymd') . '-' . str_pad($contagem + 1, 4, '0', STR_PAD_LEFT);
+    $numeroPedido = $prefixo . str_pad($contagem + 1, 4, '0', STR_PAD_LEFT);
 
     // PASSO 3: Calcula o valor total no servidor
     // Mesmo que o front envie preços, recalculamos para segurança

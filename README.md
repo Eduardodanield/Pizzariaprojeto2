@@ -26,7 +26,7 @@ A **Pizzaria TT** é um sistema Full Stack acadêmico desenvolvido como **Projet
 |---|---|---|---|
 | **Eduardo Daniel Alves Sampaio** | 2224104694 | Líder Técnico / Back-end | APIs PHP, painel admin, configuração do banco, integração front-back |
 | **Eduardo Matheus Correia Santos** | 2224107415 | Líder Front-end | index.php, script.js, Tailwind CSS, visual, UX/UI |
-| **Diogo Neves** | — | Front-end (suporte) | Assets visuais, componentes, suporte ao Tailwind |
+| **Diogo Neves** | 2224102999  | Front-end (suporte) | Organização da documentação |
 | **João Paulo Nunes de Jesus Araujo Leitão** | 2224107083 | Banco de Dados | Modelagem, script SQL, seeds de teste, diagrama ER |
 
 ---

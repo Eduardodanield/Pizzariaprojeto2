@@ -2,8 +2,8 @@
 /**
  * Pizzaria TT — Projeto de Extensão
  * Arquivo: admin/setup.php
- * Responsável principal: Eduardo Daniel (Back-end PHP)
- * Suporte: —
+ * Responsável principal: Eduardo Daniel 
+ * Suporte: — Diogo Neves Oliveira RA: 2224102999 
  * Descrição: Script de primeiro acesso — cria ou redefine o usuário admin.
  *            Execute UMA vez após importar o banco, depois DELETE este arquivo.
  *

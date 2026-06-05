@@ -2,8 +2,8 @@
 /**
  * Pizzaria TT — Projeto de Extensão
  * Arquivo: api/status.php
- * Responsável principal: Eduardo Daniel (Back-end PHP)
- * Suporte: Eduardo Matheus (chamada no script.js)
+ * Responsável principal: Eduardo Daniel RA: 2224104694 (Back-end PHP)
+ * Suporte: Eduardo Matheus RA: 2224107415 (chamada no script.js)
  * Descrição: Consulta o status atual de um pedido pelo número.
  *            O cliente pode usar para rastrear o próprio pedido.
  *

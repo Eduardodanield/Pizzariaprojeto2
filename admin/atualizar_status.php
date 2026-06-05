@@ -2,8 +2,8 @@
 /**
  * Pizzaria TT — Projeto de Extensão
  * Arquivo: admin/atualizar_status.php
- * Responsável principal: Eduardo Daniel (Back-end PHP)
- * Suporte: —
+ * Responsável principal: Eduardo Daniel RA: 2224104694 
+ * Suporte: Diogo Neves Oliveira RA: 2224102999 
  * Descrição: Endpoint AJAX chamado pelo admin/index.php para atualizar
  *            o status de um pedido sem recarregar a página.
  *

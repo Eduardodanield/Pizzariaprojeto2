@@ -1,8 +1,10 @@
 -- =====================================================
 -- Pizzaria TT — Projeto de Extensão
--- Arquivo: sql/pizzaria_tt.sql
--- Responsável principal: João (Banco de Dados)
--- Suporte: Eduardo Daniel (Back-end PHP)
+-- Arquivo: Banco de dados/pizzaria_tt.sql
+-- Responsável principal: João Paulo Nunes de Jesus Araujo Leitão
+--                        RA: 2224107083 (Banco de Dados)
+-- Suporte: Eduardo Daniel Alves Sampaio
+--          RA: 2224104694 (Back-end PHP)
 -- Descrição: Script de criação completo do banco de dados pizzaria_tt.
 --            Importe diretamente pelo phpMyAdmin do XAMPP.
 --
@@ -175,7 +177,13 @@ INSERT INTO pizzas (nome, descricao, preco_p, preco_m, preco_g, imagem, categori
 
 
 -- =====================================================
--- Usuário admin: criado via admin/setup.php
--- Acesse: http://localhost/pizzaria/Pizzaria-main/admin/setup.php
+-- USUÁRIO ADMINISTRADOR
+-- Já inserido abaixo — não é necessário rodar setup.php.
 -- Credenciais padrão: usuário = admin | senha = admin123
+--
+-- O hash abaixo é bcrypt gerado pelo PHP (password_hash).
+-- Troque a senha pelo painel ou rodando setup.php novamente
+-- caso queira personalizar.
 -- =====================================================
+INSERT INTO usuarios_admin (usuario, senha_hash) VALUES
+('admin', '$2y$10$GIehEVE5xv.4nCc7teSfOeXnqUrJuUiu5rOKxVkOi/ui9GooTTj4C');

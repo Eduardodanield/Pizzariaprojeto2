@@ -1,7 +1,219 @@
+/*
+ * Pizzaria TT — Projeto de Extensão
+ * Arquivo: styles/style.css
+ * Responsável principal: Eduardo Matheus RA: 2224107415 (Front-end)
+ * Suporte: Diogo Neves (estilos e assets)
+ * Descrição: Estilos globais e paleta de cores da página principal.
+ *            Compilado pelo Tailwind CSS em styles/output.css.
+ *            Para recompilar: npm run dev
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
-background-color: #F6F7F8;
+/* ─── Propriedades animáveis (CSS Houdini) — Eduardo Matheus (Front-end) ─── */
+@property --a  { syntax: '<angle>';      inherits: true; initial-value: 0deg;  }
+@property --p  { syntax: '<percentage>'; inherits: true; initial-value: 0%;    }
+@property --c1 { syntax: '<color>';      inherits: true; initial-value: #000;  }
+@property --c2 { syntax: '<color>';      inherits: true; initial-value: #000;  }
+
+/* ─── Paleta italiana premium — Eduardo Matheus (Front-end) ──────────────────
+   Variáveis centralizadas para consistência em todo o projeto.
+   ─────────────────────────────────────────────────────────────────────────── */
+:root {
+    --color-cream:      #FBF7F0;
+    --color-accent:     #C73E1D;
+    --color-text-light: #F5EFE6;
+    --color-text-dark:  #1A1A1A;
+    --color-gold:       #D4A017;
+    --s: 80px;
 }
+
+/* ─── Fundo animado do body — pattern geométrico ────────────────────────── */
+body {
+    --_g: #0000, var(--c1) 2deg calc(var(--a) - 2deg), #0000 var(--a);
+    background:
+        conic-gradient(from calc(-45deg  - var(--a)/2) at top    var(--p) left  var(--p), var(--_g)),
+        conic-gradient(from calc(-45deg  - var(--a)/2) at top    var(--p) left  var(--p), var(--_g)),
+        conic-gradient(from calc( 45deg  - var(--a)/2) at top    var(--p) right var(--p), var(--_g)),
+        conic-gradient(from calc( 45deg  - var(--a)/2) at top    var(--p) right var(--p), var(--_g)),
+        conic-gradient(from calc(-135deg - var(--a)/2) at bottom var(--p) left  var(--p), var(--_g)),
+        conic-gradient(from calc(-135deg - var(--a)/2) at bottom var(--p) left  var(--p), var(--_g)),
+        conic-gradient(from calc( 135deg - var(--a)/2) at bottom var(--p) right var(--p), var(--_g)),
+        conic-gradient(from calc( 135deg - var(--a)/2) at bottom var(--p) right var(--p), var(--_g))
+        var(--c2);
+    background-size: calc(2 * var(--s)) calc(2 * var(--s));
+    animation: m 2s infinite alternate linear;
+}
+
+@keyframes m {
+    0%,   15%   { --a: 135deg; --p: 20%; --c1: #3B8183; --c2: #FAD089; background-position: 0 0, var(--s) var(--s); }
+    45%,  50%   { --a:  90deg; --p: 25%; --c1: #3B8183; --c2: #FAD089; background-position: 0 0, var(--s) var(--s); }
+    50.01%, 55% { --a:  90deg; --p: 25%; --c2: #3B8183; --c1: #FAD089; background-position: var(--s) 0, 0 var(--s); }
+    85%,  100%  { --a: 135deg; --p: 20%; --c2: #3B8183; --c1: #FAD089; background-position: var(--s) 0, 0 var(--s); }
+}
+
+/* ─── Banner — Eduardo Matheus (Front-end) ───────────────────────────────────
+   object-fit: contain mostra a imagem INTEIRA sem cortar nenhuma parte.
+   Áreas laterais vazias (telas muito largas) ficam pretas — natural pois
+   o fundo do banner já é preto.
+   ─────────────────────────────────────────────────────────────────────────── */
+.banner-hero {
+    position: relative;
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+    line-height: 0;
+    border-bottom: 8px solid var(--color-gold);
+}
+
+.banner-img {
+    width: 100%;
+    height: 25.5vw;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Overlay sobre o forno — canto superior direito */
+.info-overlay {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    padding: 1.2rem 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    color: #fff;
+    white-space: nowrap;
+    line-height: normal;
+}
+
+.info-address {
+    font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+    font-weight: 600;
+    margin: 0 0 0.8rem;
+    color: #fff;
+}
+
+/* Badge + ícone do Instagram lado a lado */
+.info-badge-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+/* Badge sempre verde com glow pulsante */
+.info-badge {
+    display: inline-block;
+    background-color: #16a34a !important;
+    color: #fff;
+    padding: 0.6rem 1.8rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    white-space: nowrap;
+    animation: glow-verde 2s ease-in-out infinite;
+}
+
+@keyframes glow-verde {
+    0%, 100% { box-shadow: 0 0 6px 2px rgba(22, 163, 74, 0.5); }
+    50%       { box-shadow: 0 0 18px 6px rgba(22, 163, 74, 0.9); }
+}
+
+/* Instagram colorido com brilho suave no hover */
+.instagram-link {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: filter 0.4s ease;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.instagram-link:hover {
+    filter: brightness(1.4) drop-shadow(0 0 8px rgba(220, 39, 67, 0.7));
+}
+
+/* Mobile: banner menor e overlay desce abaixo */
+@media (max-width: 768px) {
+    .banner-img { height: 180px; }
+    .info-overlay {
+        position: static;
+        transform: none;
+        white-space: normal;
+        max-width: 100%;
+        border-radius: 0;
+        background-color: #000;
+        padding: 0.75rem 1rem 1rem;
+    }
+}
+
+/* ─── Título "Conheça nosso menu" — legível sobre fundo verde ───────────────
+   !important necessário para sobrescrever a classe text-red-600 do Tailwind.
+   ─────────────────────────────────────────────────────────────────────────── */
+body > h2 {
+    background-color: var(--color-gold);
+    color: var(--color-text-dark) !important;
+    text-shadow: none;
+    width: 100%;
+    margin: 0 !important;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/* Espaço entre a faixa amarela e os cards do cardápio */
+#menu {
+    padding-top: 2.5rem;
+}
+
+/* ─── Subtítulo "Bebidas" dentro da seção do menu ───────────────────────────*/
+#menu h2 {
+    color: var(--color-text-light);
+}
+
+/* ─── Cards do cardápio — fundo creme destacando do verde escuro ─────────────
+   padding: 1.5rem garante espaçamento generoso em desktop.
+   Responsividade: o padding reduz levemente via media query abaixo.
+   ─────────────────────────────────────────────────────────────────────────── */
+#menu-pizzas > div,
+#menu-bebidas > div {
+    background-color: var(--color-cream);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover: elevação sutil para indicar interatividade */
+#menu-pizzas > div:hover,
+#menu-bebidas > div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Glow dourado nas imagens das pizzas ao passar o mouse */
+#menu-pizzas > div img,
+#menu-bebidas > div img {
+    transition: filter 0.35s ease;
+}
+
+#menu-pizzas > div img:hover,
+#menu-bebidas > div img:hover {
+    filter: brightness(1.15) drop-shadow(0 0 10px rgba(255, 200, 50, 0.85));
+}
+
+/* Mobile: padding menor para aproveitar melhor o espaço */
+@media (max-width: 768px) {
+    #menu-pizzas > div,
+    #menu-bebidas > div {
+        padding: 1rem;
+    }
+}
+
+/* glow-verde definido acima junto com .info-badge */

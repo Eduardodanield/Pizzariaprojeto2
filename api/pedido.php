@@ -2,8 +2,8 @@
 /**
  * Pizzaria TT — Projeto de Extensão
  * Arquivo: api/pedido.php
- * Responsável principal: Eduardo Daniel (Back-end PHP)
- * Suporte: Eduardo Matheus (chamada no script.js)
+ * Responsável principal: Eduardo Daniel RA: 2224104694 (Back-end PHP)
+ * Suporte: Eduardo Matheus RA: 2224107415 (chamada no script.js)
  * Descrição: Recebe um novo pedido via JSON, valida todos os campos,
  *            e persiste cliente + pedido + itens em uma única transação PDO.
  *            Em caso de falha em qualquer etapa, faz rollback completo.

@@ -10,7 +10,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1024, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Toastify: notificações de sucesso/erro no checkout -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
@@ -38,36 +38,34 @@
 <body>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     HEADER — foto, nome, Instagram e indicador de horário de funcionamento
+     BANNER — arte completa da pizzaria com informações sobrepostas
      ═══════════════════════════════════════════════════════════════════════════ -->
-<header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
-    <div class="w-full h-full flex flex-col justify-center items-center">
-        <img
-            src="./assets/Logo_Pizzaria.jpg"
-            alt="Logo Pizzaria TT"
-            class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200"
-        />
-        <div class="flex items-center gap-4 mt-4">
-            <h1 class="text-4xl font-bold italic text-white">Pizzaria TT</h1>
-            <a
-                href="https://www.instagram.com/pizzaria_do_cheeffe/"
-                target="_blank"
-                class="text-white text-5xl"
-                title="Visite nosso Instagram"
-            >
-                <i class="fab fa-instagram"></i>
+<section class="banner-hero">
+
+    <img
+        src="./assets/bannerc.png"
+        alt="Pizzaria TT — Sabor que une, momentos que ficam"
+        class="banner-img"
+    >
+
+    <!-- Overlay canto superior direito — endereço, badge e Instagram -->
+    <div class="info-overlay">
+        <p class="info-address">Rua Santo Amaro, nº 199 — São Paulo-SP</p>
+        <div class="info-badge-row">
+            <!-- Indicador de aberto/fechado — cor aplicada dinamicamente pelo js/script.js -->
+            <span class="info-badge" id="date-span">Terça a Dom — 18:00 às 01:00</span>
+            <a href="https://www.instagram.com/pizzaria_do_cheeffe/"
+               target="_blank"
+               aria-label="Instagram da Pizzaria TT"
+               class="instagram-link">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
             </a>
         </div>
-        <span class="text-white font-medium">Rua Santo Amaro, nº 199 — São Paulo-SP</span>
-
-        <!-- Indicador de aberto/fechado — cor aplicada dinamicamente pelo js/script.js -->
-        <div class="px-4 py-1 rounded-lg mt-5" id="date-span">
-            <span class="text-white font-medium">Terça a Dom — 18:00 às 01:00</span>
-        </div>
     </div>
-</header>
+
+</section>
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     FIM DO HEADER
+     FIM DO CABEÇALHO
      ═══════════════════════════════════════════════════════════════════════════ -->
 
 

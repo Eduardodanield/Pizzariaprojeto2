@@ -2,8 +2,8 @@
 /**
  * Pizzaria TT — Projeto de Extensão
  * Arquivo: admin/login.php
- * Responsável principal: Eduardo Daniel (Back-end PHP)
- * Suporte: —
+ * Responsável principal: Eduardo Daniel RA: 2224104694 
+ * Suporte: — Eduardo Matheus Correia Santos  RA: 2224107415 
  * Descrição: Página de login do painel administrativo.
  *            GET  → exibe o formulário de login.
  *            POST → valida credenciais, inicia sessão e redireciona.

@@ -2,8 +2,8 @@
 /**
  * Pizzaria TT — Projeto de Extensão
  * Arquivo: api/pizzas.php
- * Responsável principal: Eduardo Daniel (Back-end PHP)
- * Suporte: Eduardo Matheus (integração no script.js)
+ * Responsável principal: Eduardo Daniel RA: 2224104694 (Back-end PHP)
+ * Suporte: Eduardo Matheus RA: 2224107415 (integração no script.js)
  * Descrição: Retorna o cardápio completo (pizzas ativas + bebidas) em JSON.
  *            Chamado pelo script.js na inicialização da página.
  *

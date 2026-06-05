@@ -2,8 +2,8 @@
 /**
  * Pizzaria TT — Projeto de Extensão
  * Arquivo: admin/logout.php
- * Responsável principal: Eduardo Daniel (Back-end PHP)
- * Suporte: —
+ * Responsável principal: Eduardo Daniel 
+ * Suporte: — Diogo Neves Oliveira RA: 2224102999 
  * Descrição: Encerra a sessão do administrador e redireciona para o login.
  */
 

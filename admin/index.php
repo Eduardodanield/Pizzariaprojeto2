@@ -2,8 +2,8 @@
 /**
  * Pizzaria TT — Projeto de Extensão
  * Arquivo: admin/index.php
- * Responsável principal: Eduardo Daniel (Back-end PHP)
- * Suporte: —
+ * Responsável principal: Eduardo Daniel RA: 2224104694  
+ * Suporte: — Eduardo Matheus Correia Santos  RA: 2224107415 
  * Descrição: Painel administrativo principal.
  *            Lista os pedidos do dia com resumo por status,
  *            filtros por aba e botões de atualização de status via AJAX.
@@ -141,13 +141,18 @@ $statusIcones = [
                 <p class="text-xs text-red-200">Painel de Pedidos — <?= date('d/m/Y') ?></p>
             </div>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
             <span class="text-sm hidden sm:block">
                 Olá, <strong><?= htmlspecialchars($_SESSION['admin_usuario'], ENT_QUOTES, 'UTF-8') ?></strong>
             </span>
-            <a href="logout.php"
+            <a href="cardapio.php"
                class="bg-white text-red-600 px-3 py-1 rounded-lg text-sm font-semibold
                       hover:bg-red-50 transition">
+                🍕 Cardápio
+            </a>
+            <a href="logout.php"
+               class="bg-red-800 text-white px-3 py-1 rounded-lg text-sm font-semibold
+                      hover:bg-red-900 transition">
                 Sair
             </a>
         </div>
